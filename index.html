@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Train Tracker - Choo Choo!</title>
+
+	<!-- bootstrap and jquery link ins -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- firebase (based on 4.6.2 to match mine) -->
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+
+	<!-- moment.js reference -->
+	<script src="http://momentjs.com/downloads/moment.js"></script>   
+</head>
+<body>
+
+	<!-- contains everything -->
+	<div class="container">
+		
+		<!-- jumbotron title -->
+		<div class="jumbotron" style="background-color:#8D5D00; color:white;">
+			<h1 class="text-center">Journey down the Train Tracker</h1>
+			<h3 class="text-center">
+				Chugga Chugga Choo Choo! 
+				<br> 
+				Use this to track when your trains will be arriving next! 
+			</h3>
+		</div>
+
+		<div class="row">
+			<!-- for computer screen view -->
+			<div class="col-lg-12"> 
+
+				<!-- existing train schedules -->
+				<div class="panel panel-primary">
+
+					<!-- title of this panel section -->
+					<div class="panel-heading">
+						<h3 class="panel-title"><b>Current Train Schedules</b></h3>
+					</div>
+
+					<!-- content of this panel section -->
+					<div class="panel-body">
+						<table class="table table-hover" id="currentTrains">
+							<thead>
+								<tr>
+									<th>Train Name</th>
+									<th>Train Destination</th>
+									<th>Frequency (Minutes)</th>
+									<th>First Train of the Day</th>
+									<th>Last Train of the Day</th>
+									<th>Next Arrival</th>
+									<th>Arriving In (Minutes)</th>
+								</tr>
+							</thead>
+
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- section for adding new trains -->
+				<div class="panel panel-primary">
+
+					<!-- title of this panel section -->
+					<div class="panel-heading">
+						<h3 class="panel-title"><b>Add a New Train</b></h3>
+					</div>
+
+					<!-- form for adding a new train -->
+					<form>
+						<!-- new train name -->
+						<div class="form-group">
+							<label for="newTrainName">Train Name or Number</label>
+							<input class="form-control" id="nameInput" type="text">
+						</div>
+						<!-- new train destination -->
+						<div class="form-group">
+							<label for="newTrainDestination">Train Final Destination</label>
+							<input class="form-control" id="destinationInput" type="text">
+						</div>
+						<!-- new train frequency in minutes -->
+						<div class="form-group">
+							<label for="newTrainFrequency">Train Frequency in Minutes</label>
+							<input class="form-control" id="frequencyInput" type="text">
+						</div>
+						<!-- first train of the day -->
+						<div class="form-group">
+							<label for="newTrainStart">First Train of the Day (in 24 hour format - 13:00)</label>
+							<input class="form-control" id="startInput" type="text">
+						</div>
+						<!-- last train of the day -->
+						<div class="form-group">
+							<label for="newTrainEnd">Last Train of the Day (in 24 hour format - 13:00)</label>
+							<input class="form-control" id="endInput" type="text">
+						</div>
+						<!-- submit button -->
+						<button class="btn btn-primary" id="submitButton" type="submit">Submit</button>
+					</form>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+	<!-- external javascript sheet -->
+	<script src="chooChoo.js"></script>
+
+</body>
+</html>
