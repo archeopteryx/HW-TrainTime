@@ -19,8 +19,8 @@ var database = firebase.database();
   	var trainName = $("#nameInput").val().trim();
   	var trainDestination = $("#destinationInput").val().trim();
   	var trainFrequency = moment($("#frequencyInput").val().trim(), "mm").format("mm")
-  	var trainStart = moment($("#startInput").val().trim(), "hh:mm").format("HH:mm");
-  	var trainEnd = moment($("#endInput").val().trim(), "hh:mm").format("HH:mm");
+  	var trainStart = moment($("#startInput").val().trim(), "HH:mm").format("HH:mm");
+  	var trainEnd = moment($("#endInput").val().trim(), "HH:mm").format("HH:mm");
 
   	// train object with all of these as attributes
   	var newTrain = {
@@ -77,17 +77,21 @@ var database = firebase.database();
   	//confirmed working to this point
 
   	// calculate estimated train schedule
-  	// var trainRunning = 
+  	// var trainRunning = dbTrainEnd - dbTrainStart;
+
   	// for (var i=dbTrainStart; i<dbTrainEnd; i+dbTrainFrequency) {
-  		
+  		// var trainSched = trainRunning[i]
   	// };
 
   	// calculate next arrival
+  	var now = moment();
+
   // 	var empMonths = moment().diff(moment.unix(empStart, "X"), "months");
   // console.log(empMonths);
-  var nextArrival
+  var nextArrival = "";
 
   // calculate distance to next arrival
+  var minutesTo = "";
 
   // append all data to table 
   $("#currentTrains > tbody").append("<tr><td>" + dbTrainName + "</td><td>" + dbTrainDestination + "</td><td>" + dbTrainFrequency + "</td><td>" + dbTrainStart + "</td><td>" + dbTrainEnd + "</td><td>" + nextArrival + "</td><td>" + minutesTo + "</td></tr>");
