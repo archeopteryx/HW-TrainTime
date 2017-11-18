@@ -86,8 +86,8 @@ var database = firebase.database();
   	// calculate next arrival
   	var now = moment();
 
-  // 	var empMonths = moment().diff(moment.unix(empStart, "X"), "months");
-  // console.log(empMonths);
+  // 	var nextArrival = moment().diff(moment.unix(dbTrainStart, "X"), "months");
+  // console.log(nextArrival);
   var nextArrival = "";
 
   // calculate distance to next arrival
